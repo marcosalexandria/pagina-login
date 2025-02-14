@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-defalt-login-layout',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './defalt-login-layout.component.scss'
 })
 export class DefaltLoginLayoutComponent {
-
+  @Input() titulo: string = "";
+  @Input() textoBotaoPrimario: string = "";
+  @Input() textoBotaoSegundario: string = "";
 }

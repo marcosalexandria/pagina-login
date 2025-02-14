@@ -1,8 +1,15 @@
 <main>
-  <h2></h2>
-  <button></button>
+  <h2>{{titulo}}</h2>
+  <!--
+  No Angular, o ng-content é usado para projetar conteúdo de um componente pai dentro de um componente filho. Isso significa que tudo o que estiver dentro da tag do componente no pai será inserido dentro do ng-content no filho.
+  -->
+  <ng-content></ng-content>
+
+  <button>{{textoBotaoPrimario}}</button>
+
   <div>
     <span>ou</span>
   </div>
-  <button></button>
+  
+  <button>{{textoBotaoSegundario}}</button>
 </main>

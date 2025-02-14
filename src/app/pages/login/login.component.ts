@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { InputPrimarioComponent } from '../../components/input-primario/input-primario.component';
 import { Route, Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent {
   loginForm!: FormGroup;
 
-  constructor(private router: Router, private loginService: LoginService){
+  constructor(private router: Router, private loginService: LoginService, private toastService: ToastrService){
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
@@ -27,8 +28,8 @@ export class LoginComponent {
 
   entrar(){
     this.loginService.entrar(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: () => console.log("sucesso"),
-      error: () => console.log("error")
+      next: () => this.toastService.success("login feito com sucesso!"),
+      error: () => this.toastService.error("Erro, tente novamente mais tarde!")
     })
   }
 

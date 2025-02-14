@@ -1,1 +1,24 @@
-<app-defalt-login-layout></app-defalt-login-layout>
+<app-defalt-login-layout
+  titulo="Login"
+  textoBotaoPrimario = "Entrar"
+  textoBotaoSegundario = "Criar Conta">
+
+  <form [formGroup]="loginForm"> <!-- pegando no filho com ng-content-->
+    <app-input-primario
+    formControlName="email"
+    nomeInput="email"
+    type="email"
+    label="login"
+    placeholder="seu@email.com">
+    </app-input-primario>
+
+    <app-input-primario
+    formControlName="password"
+    nomeInput="password"
+    type="password"
+    label="senha"
+    placeholder="*********">
+    </app-input-primario>
+
+  </form>
+</app-defalt-login-layout>

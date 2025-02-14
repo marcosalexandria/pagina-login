@@ -2,7 +2,8 @@
   titulo="Login"
   textoBotaoPrimario = "Entrar"
   textoBotaoSegundario = "Criar Conta"
-  (submit)="entrar()">
+  (submit)="entrar()"
+  (navigate)="navegaParaCadastro()">
 
   <form [formGroup]="loginForm"> <!-- pegando no filho com ng-content-->
     <app-input-primario

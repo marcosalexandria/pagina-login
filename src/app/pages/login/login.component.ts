@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DefaltLoginLayoutComponent } from "../../components/defalt-login-layout/defalt-login-layout.component";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputPrimarioComponent } from '../../components/input-primario/input-primario.component';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { InputPrimarioComponent } from '../../components/input-primario/input-pr
 export class LoginComponent {
   loginForm!: FormGroup;
 
-  constructor(){
+  constructor(private router: Router){
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
@@ -22,5 +23,9 @@ export class LoginComponent {
 
   entrar(){
     console.log(this.loginForm.value)
+  }
+
+  navegaParaCadastro(){
+    this.router.navigate(["cadastrar"]) //inda nao criei a rota
   }
 }

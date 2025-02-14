@@ -19,4 +19,8 @@ export class LoginComponent {
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
   }
+
+  entrar(){
+    console.log(this.loginForm.value)
+  }
 }

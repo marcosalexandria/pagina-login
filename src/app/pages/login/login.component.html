@@ -1,7 +1,8 @@
 <app-defalt-login-layout
   titulo="Login"
   textoBotaoPrimario = "Entrar"
-  textoBotaoSegundario = "Criar Conta">
+  textoBotaoSegundario = "Criar Conta"
+  (submit)="entrar()">
 
   <form [formGroup]="loginForm"> <!-- pegando no filho com ng-content-->
     <app-input-primario

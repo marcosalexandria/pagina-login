@@ -3,7 +3,8 @@
   textoBotaoPrimario = "Entrar"
   textoBotaoSegundario = "Criar Conta"
   (submit)="entrar()"
-  (navigate)="navegaParaCadastro()">
+  (navigate)="navegaParaCadastro()"
+  [desabilitaBotaoPrimario]="!loginForm.valid">
 
   <form [formGroup]="loginForm"> <!-- pegando no filho com ng-content-->
     <app-input-primario

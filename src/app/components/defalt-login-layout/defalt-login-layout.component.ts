@@ -11,6 +11,7 @@ export class DefaltLoginLayoutComponent {
   @Input() titulo: string = "";
   @Input() textoBotaoPrimario: string = "";
   @Input() textoBotaoSegundario: string = "";
+  @Input() desabilitaBotaoPrimario: boolean = true;
 
   @Output("submit") onSubmit = new EventEmitter();
   @Output("navigate") onNavigate = new EventEmitter();

@@ -5,7 +5,7 @@
   -->
   <ng-content></ng-content>
 
-  <button class="btn-primario" (click)="submit()"> {{textoBotaoPrimario}} </button>
+  <button class="btn-primario" (click)="submit()" [disabled]="desabilitaBotaoPrimario"> {{textoBotaoPrimario}} </button>
 
   <div>
     <span>ou</span>

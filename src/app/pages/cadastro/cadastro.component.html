@@ -1,0 +1,44 @@
+<app-defalt-login-layout
+  titulo="Cadastre-se com seus dados"
+  textoBotaoPrimario = "Cadastrar"
+  textoBotaoSegundario = "Fazer Login"
+  (submit)="entrar()"
+  (navigate)="navegaParaCadastro()"
+  [desabilitaBotaoPrimario]="!cadastroForm.valid">
+
+  <form [formGroup]="cadastroForm"> <!-- pegando no filho com ng-content-->
+
+    <app-input-primario
+    formControlName="nome"
+    nomeInput="nome"
+    type="texto"
+    label="nome"
+    placeholder="seu nome aqui">
+    </app-input-primario>
+
+    <app-input-primario
+    formControlName="email"
+    nomeInput="email"
+    type="email"
+    label="login"
+    placeholder="seu@email.com">
+    </app-input-primario>
+
+    <app-input-primario
+    formControlName="password"
+    nomeInput="password"
+    type="password"
+    label="senha"
+    placeholder="*********">
+    </app-input-primario>
+
+    <app-input-primario
+    formControlName="confirmaPassword"
+    nomeInput="confirmaPassword"
+    type="password"
+    label="confirmar senha"
+    placeholder="*********">
+    </app-input-primario>
+
+  </form>
+</app-defalt-login-layout>
